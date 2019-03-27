@@ -1,3 +1,3 @@
 class EventCard < ApplicationRecord
-  belongs_to :level
+  has_many :resources
 end
