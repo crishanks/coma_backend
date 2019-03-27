@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2019_03_27_183538) do
     t.text "description"
     t.text "confirmation_response"
     t.text "rejection_response"
-    t.boolean "escape?", default: true
-    t.boolean "final?", default: true
+    t.boolean "escape?", default: false
+    t.boolean "final?", default: false
     t.bigint "accept_id"
     t.bigint "reject_id"
     t.bigint "level_id"

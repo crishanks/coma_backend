@@ -1,3 +1,4 @@
 class Resource < ApplicationRecord
   
+
 end
