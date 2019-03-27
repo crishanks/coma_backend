@@ -7,7 +7,9 @@ class CreateEventCards < ActiveRecord::Migration[5.2]
       t.text :rejection_response
       t.boolean :escape?
       t.boolean :final?
-      t.integer :level
+      t.references :accept, references: :resources
+      t.references :reject, references: :resources
+      t.belongs_to :level
     end
   end
 end

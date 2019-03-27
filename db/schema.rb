@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_174522) do
+ActiveRecord::Schema.define(version: 2019_03_27_183538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,15 +22,22 @@ ActiveRecord::Schema.define(version: 2019_03_27_174522) do
     t.text "rejection_response"
     t.boolean "escape?"
     t.boolean "final?"
-    t.integer "level"
+    t.bigint "accept_id"
+    t.bigint "reject_id"
+    t.bigint "level_id"
+    t.index ["accept_id"], name: "index_event_cards_on_accept_id"
+    t.index ["level_id"], name: "index_event_cards_on_level_id"
+    t.index ["reject_id"], name: "index_event_cards_on_reject_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "title"
   end
 
   create_table "resources", force: :cascade do |t|
     t.integer "health"
     t.integer "gold"
     t.integer "food"
-    t.bigint "event_cards_id"
-    t.index ["event_cards_id"], name: "index_resources_on_event_cards_id"
   end
 
 end

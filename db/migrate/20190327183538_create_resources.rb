@@ -4,7 +4,6 @@ class CreateResources < ActiveRecord::Migration[5.2]
       t.integer :health
       t.integer :gold
       t.integer :food
-      t.belongs_to :event_cards
     end
   end
 end
